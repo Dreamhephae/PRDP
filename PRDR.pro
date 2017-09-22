@@ -13,8 +13,23 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    stationcoord.cpp \
+    global.cpp \
+    satellite.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    datatypes.h \
+    stationcoord.h \
+    global.h \
+    satellite.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES +=
+
+include($$PWD\gsl\gsl.pri)
+#DEFINES += GSL_DLL
+#INCLUDEPATH += $$PWD\gsl\include
+#LIBS += -L$$PWD\gsl\lib -llibgsl
+#LIBS += -L$$PWD\gsl\lib -llibgslcblas
